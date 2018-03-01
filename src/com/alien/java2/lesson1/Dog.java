@@ -13,7 +13,7 @@ public class Dog extends Animal {
     private static final int JUMP_MAX_DIF = 5;
 
     public Dog() {
-        super("Пес", dogNames[rnd.nextInt(6)],
+        super("Пес", dogNames[rnd.nextInt(dogNames.length)],
                 (RUN_MAX - RUN_MAX_DIF) + rnd.nextInt(2 * RUN_MAX_DIF),
                 (SWIM_MAX - SWIM_MAX_DIF) + rnd.nextInt(2 * SWIM_MAX_DIF),
                 (JUMP_MAX - JUMP_MAX_DIF) + rnd.nextInt(2 * JUMP_MAX_DIF));

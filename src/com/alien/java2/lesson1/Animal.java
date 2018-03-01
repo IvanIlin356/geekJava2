@@ -3,7 +3,7 @@ package com.alien.java2.lesson1;
 import java.util.Random;
 
 public class Animal implements Competitor {
-    public static Random rnd;
+    public static Random rnd = new Random();
 
     protected String type;
     protected String name;
@@ -61,6 +61,6 @@ public class Animal implements Competitor {
 
     @Override
     public void info() {
-        System.out.println("Информация: " + type + " " + name + ", статус - " + ((isOnDistance) ? "На дистанции" : "Выбыл") + " (параметры R/S/J: " + maxRun + "/" + maxSwim + "/" + maxJump + ")");
+        System.out.println("Участник: " + type + " " + name + ", статус - " + ((isOnDistance) ? "На дистанции" : "Выбыл") + " (параметры R/S/J: " + maxRun + "/" + maxSwim + "/" + maxJump + ")");
     }
 }

@@ -3,7 +3,7 @@ package com.alien.java2.lesson1;
 import java.util.Random;
 
 public class Human implements Competitor {
-    public static Random rnd;
+    public static Random rnd = new Random();
     private static String[] names = {"Петр", "Василий", "Иван", "Михаил", "Сергей"};
 
     private static final int RUN_MAX = 300;
@@ -19,7 +19,7 @@ public class Human implements Competitor {
     boolean isOnDistance;
 
     public Human() {
-        this.name = names[rnd.nextInt(6)];
+        this.name = names[rnd.nextInt(names.length)];
         this.maxRun = (RUN_MAX - RUN_MAX_DIF) + rnd.nextInt(2 * RUN_MAX_DIF);
         this.maxSwim = (SWIM_MAX - SWIM_MAX_DIF) + rnd.nextInt(2 * SWIM_MAX_DIF);
         this.maxJump = (JUMP_MAX - JUMP_MAX_DIF) + rnd.nextInt(2 * JUMP_MAX_DIF);
@@ -66,6 +66,6 @@ public class Human implements Competitor {
 
     @Override
     public void info() {
-        System.out.println("Информация: " + name + ", статус - " + ((isOnDistance) ? "На дистанции" : "Выбыл") + " (параметры R/S/J: " + maxRun + "/" + maxSwim + "/" + maxJump + ")");
+        System.out.println("Участник:     " + name + ", статус - " + ((isOnDistance) ? "На дистанции" : "Выбыл") + " (параметры R/S/J: " + maxRun + "/" + maxSwim + "/" + maxJump + ")");
     }
 }
