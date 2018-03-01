@@ -1,22 +1,22 @@
-package com.alien.java2.lesson1;
+package com.alien.java2.lesson1.team;
 
 import java.util.Random;
 
 public class Human implements Competitor {
-    public static Random rnd = new Random();
+    private static Random rnd = new Random();
     private static String[] names = {"Петр", "Василий", "Иван", "Михаил", "Сергей"};
 
-    private static final int RUN_MAX = 300;
-    private static final int SWIM_MAX = 50;
-    private static final int JUMP_MAX = 15;
+    public static final int RUN_MAX = 300;
+    public static final int SWIM_MAX = 50;
+    public static final int JUMP_MAX = 15;
 
     private static final int RUN_MAX_DIF = 150;
     private static final int SWIM_MAX_DIF = 30;
     private static final int JUMP_MAX_DIF = 10;
 
-    protected String name;
-    int maxRun, maxSwim, maxJump;
-    boolean isOnDistance;
+    private String name;
+    private int maxRun, maxSwim, maxJump;
+    private boolean isOnDistance;
 
     public Human() {
         this.name = names[rnd.nextInt(names.length)];
@@ -34,10 +34,10 @@ public class Human implements Competitor {
     @Override
     public void run(int dist) {
         if (dist <= maxRun){
-            System.out.println("    " + name + " успешно пробежал " + dist + "м. (максимум - " + maxRun + ")");
+            System.out.println(name + " успешно пробежал " + dist + "м. (максимум - " + maxRun + ")");
         }
         else {
-            System.out.println("    " + name + " не смог пробежать " + dist + "м. (максимум - " + maxRun + ")");
+            System.out.println(name + " не смог пробежать " + dist + "м. (максимум - " + maxRun + ")");
             isOnDistance = false;
         }
     }
@@ -45,10 +45,10 @@ public class Human implements Competitor {
     @Override
     public void swim(int dist) {
         if (dist <= maxSwim){
-            System.out.println("    " + name + " успешно проплыл " + dist + "м. (максимум - " + maxSwim + ")");
+            System.out.println(name + " успешно проплыл " + dist + "м. (максимум - " + maxSwim + ")");
         }
         else {
-            System.out.println("    " + name + " не смог проплыть " + dist + "м. (максимум - " + maxSwim + ")");
+            System.out.println(name + " не смог проплыть " + dist + "м. (максимум - " + maxSwim + ")");
             isOnDistance = false;
         }
     }
@@ -56,10 +56,10 @@ public class Human implements Competitor {
     @Override
     public void jump(int height) {
         if (height <= maxJump){
-            System.out.println("    " + name + " успешно прыгнул на высоту " + height + "м. (максимум - " + maxJump + ")");
+            System.out.println(name + " успешно прыгнул на высоту " + height + "м. (максимум - " + maxJump + ")");
         }
         else {
-            System.out.println("    " + name + " не смог перепрыгнуть " + height + "м. (максимум - " + maxJump + ")");
+            System.out.println(name + " не смог перепрыгнуть " + height + "м. (максимум - " + maxJump + ")");
             isOnDistance = false;
         }
     }

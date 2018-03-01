@@ -1,11 +1,12 @@
-package com.alien.java2.lesson1;
+package com.alien.java2.lesson1.team;
+
 
 public class Dog extends Animal {
     private static String[] dogNames = {"Барбос", "Дружок", "Тузик", "Рыжик", "Мухтар"};
 
-    private static final int RUN_MAX = 400;
-    private static final int SWIM_MAX = 50;
-    private static final int JUMP_MAX = 20;
+    public static final int RUN_MAX = 400;
+    public static final int SWIM_MAX = 40;
+    public static final int JUMP_MAX = 20;
 
     // псы бывают разные!
     private static final int RUN_MAX_DIF = 150;

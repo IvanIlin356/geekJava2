@@ -1,4 +1,4 @@
-package com.alien.java2.lesson1;
+package com.alien.java2.lesson1.team;
 
 import java.util.Random;
 
@@ -30,16 +30,26 @@ public class Team {
     }
 
     public void getInfo(boolean onDistance){ // true - только те, которые прошли. false - все участники
-        System.out.println(" --- --- ");
-        System.out.println("Команда " + teamName + ((onDistance) ? ", информация по членам команды на дистанции" : ", информация по всем членам команды"));
+        System.out.println(" *****  ***** ");
+        System.out.println("Команда " + teamName + ((onDistance) ? ", информация по членам команды прошедшим дистанцию" : ", информация по всем членам команды"));
         System.out.println(" --- --- ");
         for (Competitor teamMember : teamMembers) {
-            if (onDistance) {
-                if (teamMember.isOnDistance()) teamMember.info();
-            } else {
-                teamMember.info();
-            }
+//            if (onDistance) {
+//                if (teamMember.isOnDistance()) teamMember.info();
+//            } else {
+//                teamMember.info();
+//            }
+            teamMember.info();
         }
         System.out.println(" *****  ***** ");
+        System.out.println();
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public Competitor[] getTeamMembers() {
+        return teamMembers;
     }
 }

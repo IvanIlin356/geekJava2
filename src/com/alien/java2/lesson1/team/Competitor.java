@@ -1,4 +1,4 @@
-package com.alien.java2.lesson1;
+package com.alien.java2.lesson1.team;
 
 public interface Competitor {
     boolean isOnDistance();
