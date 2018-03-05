@@ -1,4 +1,6 @@
-package com.alien.java2.lesson2.enumTask;
+package com.alien.java2.lesson2;
+
+import com.alien.java2.lesson2.enumTask.DayOfWeek;
 
 public class Homework2Enum {
 
