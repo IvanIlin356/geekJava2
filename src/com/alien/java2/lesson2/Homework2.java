@@ -6,8 +6,11 @@ import com.alien.java2.lesson2.exceptions.ArraySizeException;
 import java.util.Scanner;
 
 public class Homework2 {
+    private static Exception[] exceptions = new Exception[10];
 
     public static void main(String[] args) {
+
+
         boolean inProgr = true;
         Scanner scanner = new Scanner(System.in);
 
@@ -66,6 +69,8 @@ public class Homework2 {
             System.out.println(" ***** ***** ");
 
         }
+
+        printExceptionsArray();
     }
 
     public static void tryToWorkWithArray(String [][] array) throws ArraySizeException, ArrayConvertException{
@@ -78,18 +83,29 @@ public class Homework2 {
                             cellValue = Integer.parseInt(array[i][j]);
                         }
                         catch (Exception e){
-                            throw new ArrayConvertException("Невозможно преобразовать значение в int", i + " x " + j, array[i][j]);
+                            ArrayConvertException ex = new ArrayConvertException("Невозможно преобразовать значение в int", i + " x " + j, array[i][j]);
+                            // Добавление в массив
+                            addExceptionToArray(ex);
+                            throw ex;
                         }
                         System.out.print(cellValue + "\t");
                     }
-                    else
-                        throw new ArraySizeException("Размер массива может быть только 4!", array[i].length);
+                    else {
+                        ArraySizeException ex = new ArraySizeException("Размер массива может быть только 4!", array[i].length);
+                        // Добавление в массив
+                        addExceptionToArray(ex);
+                        throw ex;
+                    }
                 }
                 System.out.println();
             }
         }
-        else
-            throw new ArraySizeException("Размер массива может быть только 4!", array.length);
+        else{
+            ArraySizeException ex = new ArraySizeException("Размер массива может быть только 4!", array.length);
+            // Добавление в массив
+            addExceptionToArray(ex);
+            throw ex;
+        }
     }
 
     public static void exceptionTest(String[][] array){
@@ -116,6 +132,36 @@ public class Homework2 {
                 System.out.print(array[i][j] + "\t");
             }
             System.out.println();
+        }
+    }
+
+    // exception array
+
+    private static int getLastExceptionArrayNum(){
+        for (int i = 0; i < exceptions.length; i++) {
+            if (exceptions[i] == null)
+                return i;
+        }
+        return -1;
+    }
+
+    private static void  addExceptionToArray(Exception ex){
+        int lastID = getLastExceptionArrayNum();
+        if (lastID != -1){
+            exceptions[lastID] = ex;
+        }
+        else {
+            System.out.println("Массив эксепшенов переполнен!");
+        }
+
+    }
+
+    private static void printExceptionsArray(){
+        System.out.println("Полученный массив Ексепшенов");
+        for (int i = 0; i < exceptions.length; i++) {
+            if (exceptions[i] != null){
+                System.out.println((i + 1) + ") " + exceptions[i].getClass() + " " + exceptions[i].getMessage());
+            }
         }
     }
 }
