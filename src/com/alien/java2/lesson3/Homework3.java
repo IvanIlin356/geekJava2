@@ -8,9 +8,9 @@ public class Homework3 {
 
     public static void main(String[] args) {
 
-        //task1();
+        task1();
         //task2();
-        extraTask3();
+        //extraTask3();
 
     }
 
@@ -161,5 +161,44 @@ public class Homework3 {
         delta = cycleDelta / cycleCount;
         System.out.println("avg time = " + delta + " nanosec");
 
+
+        System.out.println();
+        // ***** hashSet
+        System.out.println("HashSet Test");
+        HashSet<String> hashSet = new HashSet<String>();
+
+        System.out.print("add:");
+        cycleDelta = 0;
+        for (int i = 0; i < cycleCount; i++) {
+            lastTime = System.nanoTime();
+            hashSet.add("testString");
+            cycleDelta += System.nanoTime() - lastTime;
+        }
+        delta = cycleDelta / cycleCount;
+        System.out.println("avg time = " + delta + " nanosec");
+
+        System.out.print("get:");
+        cycleDelta = 0;
+        Iterator<String> hashIterator = hashSet.iterator();
+        while (hashIterator.hasNext()){
+            lastTime = System.nanoTime();
+            hashIterator.next();
+            cycleDelta += System.nanoTime() - lastTime;
+        }
+        delta = cycleDelta / cycleCount;
+        System.out.println("avg time = " + delta + " nanosec");
+
+        System.out.print("remove:");
+        cycleDelta = 0;
+        Iterator<String> hashIterator2 = hashSet.iterator();
+        while (hashIterator2.hasNext()){
+            hashIterator2.next();
+            lastTime = System.nanoTime();
+            hashIterator2.remove();
+            cycleDelta += System.nanoTime() - lastTime;
+        }
+
+        delta = cycleDelta / cycleCount;
+        System.out.println("avg time = " + delta + " nanosec");
     }
 }
