@@ -51,12 +51,9 @@ public class Homework5 {
             }
         }).start();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < halfArray2.length; i++) {
-                    halfArray2[i] = (float)(halfArray1[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
-                }
+        new Thread(() -> {
+            for (int i = 0; i < halfArray2.length; i++) {
+                halfArray2[i] = (float)(halfArray1[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
             }
         }).start();
 
