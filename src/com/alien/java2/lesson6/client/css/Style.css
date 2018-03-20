@@ -1,0 +1,8 @@
+.authorTextArea *.text {
+    -fx-text-alignment: right;
+}
+
+.authorTextArea {
+    -fx-control-inner-background: lightgrey;
+    -fx-font-weight: bold;
+}
