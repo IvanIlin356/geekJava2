@@ -1,4 +1,4 @@
-package com.alien.java2.lesson6.client.server;
+package com.alien.java2.lesson6.server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -24,7 +24,7 @@ public class Server {
                 @Override
                 public void run() {
                     while (true) {
-                        broadcastMsg("Server say: " + scanner.nextLine());
+                        broadcastMsg(" *** Server say: " + scanner.nextLine());
                     }
                 }
             }).start();

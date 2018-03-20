@@ -1,10 +1,9 @@
-package com.alien.java2.lesson6.client.server;
+package com.alien.java2.lesson6.server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.Scanner;
 
 public class ClientHandler {
     private Socket socket;

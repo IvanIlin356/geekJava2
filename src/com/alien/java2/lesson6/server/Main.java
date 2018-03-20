@@ -1,4 +1,4 @@
-package com.alien.java2.lesson6.client.server;
+package com.alien.java2.lesson6.server;
 
 public class Main {
     public static void main(String[] args) {
